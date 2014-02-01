@@ -27,6 +27,7 @@ group :test, :development do
   gem 'capybara'
   gem 'konacha'
   gem 'poltergeist'
+  gem 'libv8', '~> 3.11.8.17'
 end
 
 group :test do
