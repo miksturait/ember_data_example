@@ -7,6 +7,7 @@ gem 'strong_parameters'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'coffee-rails'
   gem 'sass-rails'
   gem 'uglifier'
   gem 'anjlab-bootstrap-rails', '>= 2.1', :require => 'bootstrap-rails'

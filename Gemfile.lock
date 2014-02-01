@@ -67,6 +67,13 @@ GEM
       xpath (~> 1.0.0)
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
+    coffee-rails (3.2.2)
+      coffee-script (>= 2.2.0)
+      railties (~> 3.2.0)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.7.0)
     colorize (0.5.8)
     ember-data-source (0.13)
       ember-source
@@ -94,7 +101,7 @@ GEM
       colorize
       railties (>= 3.1, < 5)
       sprockets
-    libv8 (3.11.8.13)
+    libv8 (3.11.8.17)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -193,11 +200,13 @@ DEPENDENCIES
   active_model_serializers!
   anjlab-bootstrap-rails (>= 2.1)
   capybara
+  coffee-rails
   ember-rails!
   ember-source (= 1.0.0.rc6)
   handlebars-source (= 1.0.0.rc4)
   jquery-rails
   konacha
+  libv8 (~> 3.11.8.17)
   minitest
   minitest-rails
   minitest-rails-capybara
