@@ -14,7 +14,6 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
 end
 
-gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'jquery-rails'
 gem 'ember-rails'
 gem 'ember-source', '~> 1.4.0'
