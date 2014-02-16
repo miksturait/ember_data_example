@@ -1,3 +1,2 @@
-App.ContactView = Em.View.extend({
+App.ContactView = Em.View.extend
   classNames: 'contact-details'
-});
