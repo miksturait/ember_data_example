@@ -6,7 +6,7 @@ App.Contact  = DS.Model.extend
   lastName:     attr 'string' 
   email:        attr 'string' 
   notes:        attr 'string' 
-  phoneNumbers: hasMany 'App.PhoneNumber' 
+  phoneNumbers: hasMany 'phoneNumber'
 
   fullName: (->
     firstName = @get 'firstName'
