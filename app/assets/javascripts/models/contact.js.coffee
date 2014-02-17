@@ -30,3 +30,26 @@ App.Contact  = DS.Model.extend
     email = @get('email') or ''
     "http://www.gravatar.com/avatar/#{MD5 email}"
   ).property 'email'
+
+App.Contact.FIXTURES = [
+  id: 1
+  firstName:    'Joe'
+  lastName:     'Foo'
+  email:        'joe@foo.com'
+  notes:        'Joe. Just Joe.'
+  phoneNumbers: '123-456-789'
+,
+  id: 2
+  firstName:    'Sue'
+  lastName:     'Bar'
+  email:        'sue@bar.com'
+  notes:        'Nothing special to mention.'
+  phoneNumbers: '123-456-987'
+,
+  id: 3
+  firstName:    'Wojtek'
+  lastName:     'Ryrych'
+  email:        'wojtek@ryrych.pl'
+  notes:        'arghh!'
+  phoneNumbers: '123-654-789'
+]
