@@ -6,7 +6,7 @@ App.Contact  = DS.Model.extend
   lastName:     attr 'string' 
   email:        attr 'string' 
   notes:        attr 'string' 
-  phoneNumbers: hasMany 'phoneNumber'
+  phoneNumbers: hasMany 'phoneNumber', async: true
 
   fullName: (->
     firstName = @get 'firstName'
@@ -37,19 +37,19 @@ App.Contact.FIXTURES = [
   lastName:     'Foo'
   email:        'joe@foo.com'
   notes:        'Joe. Just Joe.'
-  phoneNumbers: '123-456-789'
+  phoneNumbers: '1'.w()
 ,
   id: 2
   firstName:    'Sue'
   lastName:     'Bar'
   email:        'sue@bar.com'
   notes:        'Nothing special to mention.'
-  phoneNumbers: '123-456-987'
+  phoneNumbers: '2'.w()
 ,
   id: 3
   firstName:    'Wojtek'
   lastName:     'Ryrych'
   email:        'wojtek@ryrych.pl'
   notes:        'arghh!'
-  phoneNumbers: '123-654-789'
+  phoneNumbers: '3'.w()
 ]
