@@ -14,4 +14,8 @@ App.PhoneNumber.FIXTURES = [
   id: 3
   contact: 3
   number: '123-654-789'
+,
+  id: 4
+  contact: 3
+  number: '321-654-789'
 ]

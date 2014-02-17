@@ -51,5 +51,5 @@ App.Contact.FIXTURES = [
   lastName:     'Ryrych'
   email:        'wojtek@ryrych.pl'
   notes:        'arghh!'
-  phoneNumbers: '3'.w()
+  phoneNumbers: '3 4'.w()
 ]
