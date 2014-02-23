@@ -1,0 +1,8 @@
+form.form-horizontal submit='save'
+  legend Create Contact
+  
+  partial 'contact_edit_fields'
+
+  .form-actions
+    = submitButton 'create'
+    button.btn click='cancel' Cancel
