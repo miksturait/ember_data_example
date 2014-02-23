@@ -2,9 +2,9 @@
   .navbar-inner
     .container-fluid
       .brand
-        linkTo 'contacts' | Ember Contacts
+        link-to 'contacts' | Ember Contacts
       .btn-group.pull-right
-        linkTo 'contacts.new' classNames='btn'
+        link-to 'contacts.new' classNames='btn'
           i.icon-plus-sign
           | Add Contact
 
