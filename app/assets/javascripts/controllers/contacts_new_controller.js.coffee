@@ -2,7 +2,7 @@ App.ContactsNewController = Em.ObjectController.extend
   actions:
     save: ->
       @get('model').save().then (contact) =>
-        @transitionTo 'contact', contact
+        @transitionToRoute 'contact', contact
 
     cancel: ->
       @transitionToRoute 'contacts.index'
