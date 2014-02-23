@@ -3,4 +3,4 @@ App.ContactsNewRoute = Em.Route.extend
     @store.createRecord 'contact'
 
   deactivate: ->
-    @controllerFor('contacts.new').stopEditing()
+    @controllerFor('contacts.new').get('model').deleteRecord()

@@ -5,7 +5,6 @@ App.ContactsNewController = Em.ObjectController.extend
         @transitionTo 'contact', contact
 
     cancel: ->
-      @stopEditing()
       @transitionToRoute 'contacts.index'
 
     addPhoneNumber: ->
@@ -13,9 +12,3 @@ App.ContactsNewController = Em.ObjectController.extend
 
     removePhoneNumber: (phoneNumber) ->
       phoneNumber.deleteRecord()
-
-  stopEditing: ->
-    # rollback the local transaction if it hasn't already been cleared
-    if @transaction?
-      @transaction.rollback()
-      @transaction = null
