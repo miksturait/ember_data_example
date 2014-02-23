@@ -1,9 +1,5 @@
 App.ContactsNewController = Em.ObjectController.extend
   # todo move to actions scope
-  startEditing: ->
-    # create a new record on a local transaction
-    @transaction = @get('store').transaction()
-    @set 'model', @transaction.createRecord(App.Contact, {})
 
   stopEditing: ->
     # rollback the local transaction if it hasn't already been cleared
