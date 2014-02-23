@@ -24,9 +24,9 @@
     each phoneNumbers
       .phone-number
         Ember.TextField value=number placeholder='Number'
-        a.btn click='removePhoneNumber this'
+        a.btn{action 'removePhoneNumber this'}
           i.icon-minus-sign
           | Remove
-    a.btn click='addPhoneNumber'
+    a.btn{action 'addPhoneNumber'}
       i.icon-plus-sign
       | Add a phone number

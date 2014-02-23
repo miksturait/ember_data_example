@@ -7,7 +7,7 @@ else
     if email
       dt Email:
       dd = mailto email
-  
+
     if notes
       dt Notes:
       dd = notes
@@ -19,5 +19,5 @@ else
           div = phoneNumber.number
 
   .well.well-small
-    a.btn.btn-default click=startEditing Edit
-    a.btn.btn-danger click=destroyRecord Remove
+    a.btn.btn-default{action 'startEditing'} Edit
+    a.btn.btn-danger{action 'destroyRecord'} Remove
