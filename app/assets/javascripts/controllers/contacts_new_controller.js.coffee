@@ -8,15 +8,8 @@ App.ContactsNewController = Em.ObjectController.extend
       @transaction = null
 
   save: ->
-    # commit and then clear the local transaction
-    @transaction.commit()
-    @transaction = null
-
-  transitionAfterSave: (->
-    # when creating new records, it's necessary to wait for the record to be assigned
-    # an id before we can transition to its route (which depends on its id)
-    @transitionToRoute('contact', @get 'model') if @get('model.id')
-  ).observes 'model.id'
+    @get('model').save().then (contact) =>
+      @transitionTo 'contact', contact
 
   cancel: ->
     @stopEditing()
