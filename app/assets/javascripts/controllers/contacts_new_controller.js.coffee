@@ -1,22 +1,21 @@
 App.ContactsNewController = Em.ObjectController.extend
-  # todo move to actions scope
+  actions:
+    stopEditing: ->
+      # rollback the local transaction if it hasn't already been cleared
+      if @transaction?
+        @transaction.rollback()
+        @transaction = null
 
-  stopEditing: ->
-    # rollback the local transaction if it hasn't already been cleared
-    if @transaction?
-      @transaction.rollback()
-      @transaction = null
+    save: ->
+      @get('model').save().then (contact) =>
+        @transitionTo 'contact', contact
 
-  save: ->
-    @get('model').save().then (contact) =>
-      @transitionTo 'contact', contact
+    cancel: ->
+      @stopEditing()
+      @transitionToRoute 'contacts.index'
 
-  cancel: ->
-    @stopEditing()
-    @transitionToRoute 'contacts.index'
+    addPhoneNumber: ->
+      @get('model.phoneNumbers').createRecord()
 
-  addPhoneNumber: ->
-    @get('model.phoneNumbers').createRecord()
-
-  removePhoneNumber: (phoneNumber) ->
-    phoneNumber.deleteRecord()
+    removePhoneNumber: (phoneNumber) ->
+      phoneNumber.deleteRecord()
