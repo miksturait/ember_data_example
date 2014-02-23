@@ -1,11 +1,5 @@
 App.ContactsNewController = Em.ObjectController.extend
   actions:
-    stopEditing: ->
-      # rollback the local transaction if it hasn't already been cleared
-      if @transaction?
-        @transaction.rollback()
-        @transaction = null
-
     save: ->
       @get('model').save().then (contact) =>
         @transitionTo 'contact', contact
@@ -19,3 +13,9 @@ App.ContactsNewController = Em.ObjectController.extend
 
     removePhoneNumber: (phoneNumber) ->
       phoneNumber.deleteRecord()
+
+  stopEditing: ->
+    # rollback the local transaction if it hasn't already been cleared
+    if @transaction?
+      @transaction.rollback()
+      @transaction = null
