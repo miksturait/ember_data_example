@@ -7,7 +7,6 @@ App.ContactController = Em.ObjectController.extend
       # todo use Em.computed.alias to bind to contactEdit controller
       contactEditController = @get 'controllers.contactEdit'
       contactEditController.set 'model', @get('model')
-      contactEditController.startEditing()
       @set 'isEditing', true
 
     stopEditing: ->
