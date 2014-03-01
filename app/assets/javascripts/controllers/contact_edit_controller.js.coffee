@@ -3,11 +3,7 @@ App.ContactEditController = Em.ObjectController.extend
 
   actions:
     stopEditing: ->
-      # rollback the local transaction if it hasn't already been cleared
-      transaction = this.transaction
-      if transaction
-        transaction.rollback()
-        @transaction = undefined
+      @get('model').rollback()
 
     save: ->
       @transaction.commit()
@@ -16,8 +12,7 @@ App.ContactEditController = Em.ObjectController.extend
       @get('controllers.contact').stopEditing()
 
     cancel: ->
-      @get('controllers.contact').stopEditing()
-
+      @get('controllers.contact').send 'stopEditing'
 
     addPhoneNumber: ->
       @get('model.phoneNumbers').createRecord()

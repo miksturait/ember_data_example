@@ -12,7 +12,7 @@ App.ContactController = Em.ObjectController.extend
         isEditing: true
 
     stopEditing: ->
-      @get('contactEditContr').stopEditing()
+      @get('contactEditContr').send 'stopEditing'
       @set 'isEditing', false
 
     destroyRecord: ->
