@@ -9,9 +9,8 @@ App.ContactEditController = Em.ObjectController.extend
       @get('model').rollback()
 
     save: ->
-      @transaction.commit()
-      @transaction = undefined
-      @get('contactContr').stopEditing()
+      @get('model').save().then =>
+        @get('contactContr').send 'stopEditing'
 
     cancel: ->
       @get('contactContr').send 'stopEditing'
