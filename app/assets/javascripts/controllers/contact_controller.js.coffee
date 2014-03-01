@@ -1,18 +1,18 @@
+alias = Em.computed.alias
+
 App.ContactController = Em.ObjectController.extend
-  needs:      'contactEdit'.w()
-  isEditing:  false
+  needs:            'contactEdit'.w()
+  contactEditContr: alias 'controllers.contactEdit'
+  isEditing:        false
 
   actions:
     startEditing: ->
-      # todo use Em.computed.alias to bind to contactEdit controller
-      contactEditController = @get 'controllers.contactEdit'
-      contactEditController.set 'model', @get('model')
-      @set 'isEditing', true
+      @setProperties
+        'contactEditContr.model': @get 'model'
+        isEditing: true
 
     stopEditing: ->
-      # todo as above
-      contactEditController = @get 'controllers.contactEdit'
-      contactEditController.stopEditing()
+      @get('contactEditContr').stopEditing()
       @set 'isEditing', false
 
     destroyRecord: ->
