@@ -1,0 +1,4 @@
+.control-group
+  label.control-label for=fieldName = label
+  .controlls
+    Ember.TextField value=value id=fieldName placeholder=placeholder required=required
