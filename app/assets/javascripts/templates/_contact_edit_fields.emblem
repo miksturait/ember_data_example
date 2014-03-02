@@ -1,22 +1,8 @@
-.control-group
-  label.control-label for='firstName' First name
-  .controlls
-    Ember.TextField value=firstName id='firstName' placeholder='First Name' required=true
+control-group fieldName='firstName' label='First Name' value=firstName placeholder='First Name' required=true
+control-group fieldName='lastName' label='Last Name' value=lastName placeholder='Last Name' required=true
 
-.control-group
-  label.control-label for='lastName' Last name
-  .controlls
-    Ember.TextField value=lastName id='lastName' placeholder='Last Name' required=true
-
-.control-group
-  label.control-label for='email' Email
-  .controlls
-    Ember.TextField value=email type='email' id='email' placeholder='Email Address'
-
-.control-group
-  label.control-label for='notes' Notes
-  .controlls
-    Ember.TextField value=notes id='notes' placeholder='Notes'
+control-group fieldName='email' label='Email' value=email placeholder='Email Address'
+control-group fieldName='notes' label='Notes' value=notes placeholder='Notes'
 
 .control-group
   label.control-label for='phone' Phone
