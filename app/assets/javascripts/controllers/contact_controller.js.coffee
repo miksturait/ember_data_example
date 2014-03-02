@@ -18,8 +18,5 @@ App.ContactController = Em.ObjectController.extend
     destroyRecord: ->
       # todo add translation
       if window.confirm('Are you sure you want to delete this contact?')
-        @get('model').deleteRecord()
-        @get('store').commit()
-
-        # return to the main contacts listing page
-        @get('target.router').transitionTo 'contacts.index'
+        @get('model').destroyRecord().then =>
+          @transitionToRoute 'contacts.index'
