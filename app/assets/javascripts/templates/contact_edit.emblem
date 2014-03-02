@@ -1,8 +1,1 @@
-form.form-horizontal{action 'save' on='submit'}
-  legend Edit Contact
-
-  partial 'contact_edit_fields'
-
-  .form-actions
-    = submitButton 'Update'
-    button.btn{action 'cancel'} Cancel
+App.ContactEditView title='Edit Contact' submitButtonLabel='Update'

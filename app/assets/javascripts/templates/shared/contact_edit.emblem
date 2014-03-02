@@ -1,0 +1,8 @@
+form.form-horizontal{action 'save' on='submit'}
+  legend= view.title
+
+  partial 'contact_edit_fields'
+
+  .form-actions
+    = submitButton view.submitButtonLabel
+    button.btn{action 'cancel'} Cancel
