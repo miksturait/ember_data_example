@@ -20,7 +20,7 @@
 
 .control-group
   label.control-label for='phone' Phone
-  .controlls
+  .controls
     each phoneNumbers
       .phone-number
         Ember.TextField value=number placeholder='Number'
