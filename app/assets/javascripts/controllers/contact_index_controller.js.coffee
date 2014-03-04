@@ -1,7 +1,7 @@
 alias = Em.computed.alias
 
-App.ContactController = Em.ObjectController.extend
-  needs:            'contactEdit'.w()
+App.ContactIndexController = Em.ObjectController.extend
+  needs: 'contactEdit'.w()
   contactEditContr: alias 'controllers.contactEdit'
   isEditing:        false
 
