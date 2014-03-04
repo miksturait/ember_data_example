@@ -1,6 +1,14 @@
 App.ContactsNewRoute = Em.Route.extend
   model: ->
-    @store.createRecord 'contact'
+    contact = @store.createRecord 'contact'
+    @set 'contact', contact
+    contact
+
+  actions:
+    destroyRecord: ->
+      @get('contact').deleteRecord()
+      @set 'contact', null
+      @transitionTo 'contacts.index'
 
   deactivate: ->
-    @controllerFor('contacts.new').get('model').deleteRecord()
+    @send 'destroyRecord' if @get('contact')?

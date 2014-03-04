@@ -5,7 +5,7 @@ App.ContactsNewController = Em.ObjectController.extend
         @transitionToRoute 'contact', contact
 
     cancel: ->
-      @transitionToRoute 'contacts.index'
+      @send 'destroyRecord'
 
     addPhoneNumber: ->
       @get('model.phoneNumbers').createRecord()
