@@ -1,0 +1,21 @@
+h2: img src=gravatar = fullName
+
+dl.dl-horizontal
+  if email
+    dt Email:
+    dd = mailto email
+
+  if notes
+    dt Notes:
+    dd = notes
+
+  if phoneNumbers.length
+    dt Phone:
+    dd
+      each phoneNumber in phoneNumbers
+        div = phoneNumber.number
+
+.well.well-small
+  link-to 'contact.edit' this classNames='btn btn-default'
+    | edit
+  a.btn.btn-danger{action 'destroyRecord'} Remove

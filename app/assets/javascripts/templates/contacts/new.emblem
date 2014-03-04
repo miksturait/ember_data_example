@@ -1,1 +1,1 @@
-App.ContactEditView title='Create Contact' submitButtonLabel='Create'
+App.ContactSharedView title='Create Contact' submitButtonLabel='Create'

@@ -1,5 +1,5 @@
-App.ContactEditView = Em.View.extend
-  templateName:     'shared/contact_edit'
+App.ContactSharedView = Em.View.extend
+  templateName:     'shared/contact_shared'
   title:            null
   submitButtonLabel: null
 
