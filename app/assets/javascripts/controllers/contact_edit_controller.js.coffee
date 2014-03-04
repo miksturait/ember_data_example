@@ -10,7 +10,7 @@ App.ContactEditController = Em.ObjectController.extend
 
     save: ->
       @get('model').save().then =>
-        @get('contactContr').send 'stopEditing'
+        @transitionToRoute 'contact'
 
     addPhoneNumber: ->
       @get('model.phoneNumbers').createRecord()
