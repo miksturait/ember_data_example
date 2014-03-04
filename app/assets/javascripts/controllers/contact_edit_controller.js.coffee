@@ -1,7 +1,7 @@
 alias = Em.computed.alias
 
 App.ContactEditController = Em.ObjectController.extend
-  needs:        'contact'.w()
+  needs: 'contact'.w()
   contactContr: alias 'controllers.contact'
 
   actions:
@@ -11,9 +11,6 @@ App.ContactEditController = Em.ObjectController.extend
     save: ->
       @get('model').save().then =>
         @get('contactContr').send 'stopEditing'
-
-    cancel: ->
-      @get('contactContr').send 'stopEditing'
 
     addPhoneNumber: ->
       @get('model.phoneNumbers').createRecord()
